@@ -5,7 +5,7 @@
 </head>
 <body>
 this is index.jsp<br/>
-<form method="get" action="/string">
+<form method="get" action="/user">
     <input type="submit" name="submit" value="submit">
 </form>
 </body>

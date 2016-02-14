@@ -76,4 +76,11 @@ public class LoginController extends BaseController {
         }
         return getSuccessResponseBody(userList);
     }
+
+    @RequestMapping(value = "/remove/all", method = RequestMethod.POST)
+    @ResponseBody
+    public Object removeAll() {
+        cache.clear();
+        return getSuccessResponseBody("remove all success.");
+    }
 }

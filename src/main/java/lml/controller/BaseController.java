@@ -5,6 +5,7 @@ import lml.domain.ResponseJSON;
 import lml.domain.User;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,17 +26,14 @@ public class BaseController extends RequestResponseController {
     }
 
     public Object validateUser(String userName, String passWord) {
-        User user = new User();
         for (Map.Entry<Long, User> entry : cache.entrySet()) {
             User user1 = entry.getValue();
             if (user1.getName().equals(userName) && user1.getPassWord().endsWith(passWord)) {
-                user = user1;
-            } else {
-                ResponseJSON responseJSON = new ResponseJSON(false, "userName or passWord is error!");
-                return responseJSON;
+                return user1;
             }
         }
-        return user;
+        ResponseJSON responseJSON = new ResponseJSON(false, "userName or passWord is error!");
+        return responseJSON;
     }
 
     public User getUser() {

@@ -28,8 +28,8 @@ public class ResponseFilter implements Filter {
 //            response.sendRedirect("/index.jsp");
 //        }
 
-        filterChain.doFilter(servletRequest, servletResponse);
         setResponseProxy(servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     public void destroy() {

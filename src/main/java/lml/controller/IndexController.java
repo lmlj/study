@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
 
 /**
  * @Auther: Lmlj
  * @Date: 2016/2/12.
  */
 @Controller
-public class IndexController extends RequestResponseController {
+public class IndexController extends BaseController {
 
     public static final int PAGE = 25;
 
@@ -25,15 +24,13 @@ public class IndexController extends RequestResponseController {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     @ResponseBody
-    public Object getUser() {
-        setResponseProxy();
+    public Object getUserString() {
         return "{ \"age\": 11,\"name\":\"李四\"}";
     }
 
     @RequestMapping(value = "/user/get", method = RequestMethod.GET)
     @ResponseBody
     public Object getUserOne() {
-        setResponseProxy();
         User user = new User();
         user.setId(1L);
         user.setName("aaa");

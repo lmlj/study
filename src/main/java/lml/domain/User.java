@@ -10,11 +10,20 @@ public class User implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
+    public static Long FINAL_ID = 1L;
+
     private Long id;
 
     private String name;
 
+    private String passWord;
+
     private Integer age;
+
+    public static Long getFinalId() {
+        ++FINAL_ID;
+        return FINAL_ID;
+    }
 
     public Long getId() {
         return id;
@@ -30,6 +39,14 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
     public Integer getAge() {

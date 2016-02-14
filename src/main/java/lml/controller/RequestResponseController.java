@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 
 /**
  * @Auther: Lmlj
  * @Date: 2016/2/13.
  */
-public class RequestResponseController {
+public class RequestResponseController implements Serializable{
 
     @Autowired(required = true)
     protected HttpServletRequest request;
@@ -34,10 +35,4 @@ public class RequestResponseController {
         this.response = response;
     }
 
-    //设置相应代理
-    public void setResponseProxy() {
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "POST,GET");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-    }
 }

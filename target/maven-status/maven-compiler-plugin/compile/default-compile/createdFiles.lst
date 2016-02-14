@@ -1,3 +1,7 @@
+lml\controller\LoginController.class
+lml\controller\BaseController.class
 lml\controller\IndexController.class
+lml\domain\ResponseJSON.class
+lml\filter\ResponseFilter.class
 lml\controller\RequestResponseController.class
 lml\domain\User.class

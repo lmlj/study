@@ -10,7 +10,7 @@ public class User implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
-    public static Long FINAL_ID = 1L;
+    public static Long FINAL_ID = 0L;
 
     private Long id;
 

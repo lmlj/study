@@ -51,7 +51,7 @@
 
             //设置登陆框的left和top
             box.style.left=wWidth/2-dWidth/2+"px";
-            box.style.top=wHeight/2-dHeight/2+"px";  /
+            box.style.top=wHeight/2-dHeight/2+"px";
 
             //点击登陆框以外的区域也可以关闭登陆框
             oMask.onclick=close.onclick=function(){

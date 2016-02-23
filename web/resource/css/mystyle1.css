@@ -1,169 +1,248 @@
-*{
-	margin:0;
-	padding:0;
-	font-family:"微软雅黑";
-}
-body{
-	background-color:#D0F0BF;
-}
+    *{
+        margin:0;
+        padding:0;
+    }
+    body{
+        background:#F7FAFC;
+        font-family:"微软雅黑";
+        height:100%;
+    }
+    /*登录注册按钮*/
+    #header{
+        width:100%;
+        height:80px;
+    }
+    #header:after{
+        content:"";
+        display:block;
+        clear:both;
+        visibility:hidden;
+        height:0px;
+    }
+    #header{
+        zoom:1;
+    }
+    .sign{
+        width:80%;
+        margin:0 auto;
+    }
+    .sign>div{
+        float:right;
+    }
+    .sign>div a{
+        display:inline-block;
+        text-decoration:none;
+        color:#0285DD;
+        margin:15px 10px;
+        padding:8px 18px;
+        text-align:center;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+    .sign div a:hover{
+        color:black;
+    }
+    /*登录框*/
+    #inbox{
+        display:none;
+        position:absolute;
+        z-index:101;
+        width:400px;
+        background-color:white;
+    }
+    #intext{
+        display:block;
+        padding:12px 0 12px 22px;
+        font-family:"微软雅黑";
+        font-size:18px;
+        color: white;
+        background-color: #4490f7;
+        cursor: move;
+    }
+    #close{
+        width:30px;
+        height:30px;
+        position:absolute;
+        right:20px;
+        top:10px;
+        cursor: pointer;
+    }
+    #close:before,
+    #close:after {
+        content:'';
+        position: absolute;
+        right:2px;
+        top:12px;
+        width: 22px;
+        height: 2px;
+        background: white;
+        transition: all 0.5s;
+    }
+    #close:before{
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    #close:after{
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    #close:hover:before{
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        transform: rotate(135deg);
+        background: #f00;
+    }
+    #close:hover:after{
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background: #f00;
+    }
+    #inbox form{
+        padding:0px 25px 50px 25px;
+    }
+    #inbox form span{
+        display:block;
+        height:50px;
+        line-height:50px;
+        color:red;
+    }
+    .signin-text{
+        display:block;
+        width:350px;
+        border: 1px solid #ddd;
+        padding:12px;
+        font-size: 14px;
+        color: #666;
+        margin-bottom:15px;
+    }
+    .signin-pass{
+        display:block;
+        width:350px;
+        border: 1px solid #ddd;
+        padding:12px;
+        font-size: 14px;
+        color: #666;
+        margin-bottom:15px;
+    }
+    .signin-submit{
+        display:block;
+        background-color: #4490f7;
+        border: 1px solid #4490f7;
+        border-radius:2px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        height: 48px;
+        width:350px;
+        margin-top:30px;
+    }
+
+    /*注册页*/
+    #upbox{
+        display:none;
+        position:absolute;
+        width:400px;
+        z-index:101;
+    }
+    #upbox h2{
+        text-align:center;
+        color:white;
+        margin-bottom:20px;
+    }
+    #upbox form{
+        padding:25px;
+    }
+    .signup-text{
+        display:block;
+        width:350px;
+        border: 1px solid #ddd;
+        padding:10px;
+        font-size: 14px;
+        color: #fff;
+        margin-bottom:30px;
+        background:rgba(0, 0, 0, 0.3);
+    }
+    .signup-password{
+        display:block;
+        width:350px;
+        border: 1px solid #ddd;
+        padding:10px;
+        font-size: 14px;
+        color: #fff;
+        margin-bottom:30px;
+        background:rgba(0, 0, 0, 0.3);
+    }
+    .signup-submit{
+        display:block;
+        background-color:#EF5719;
+        border: 1px solid #EF5719;
+        border-radius:5px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        height: 48px;
+        width:350px;
+        margin-top:30px;
+    }
 
 
+    /*搜索*/
+    #bodyer{
+        width:80%;
+        margin:0 auto;
+    }
+    #bodyer .search{
+        height:50px;
+        overflow:hidden;
+    }
+    .search label{
+        font-size:20px;
+        padding:10px;
+        line-height:50px;
+    }
+    .search-text{
+        width:300px;
+        height:40px;
+        padding:5px;
+        margin-left:10px;
+        border:1px solid #E0E0E0;
+        color:black;
+    }
+    .btn-search{
+        font-size:14px;
+        width:70px;
+        height:40px;
+        margin-left:15px;
+        border:1px solid #CBCBCB;
+        background:#EAEAEA;
+        cursor:pointer;
+    }
+    /*显示结果*/
+    .show-search{
+        margin:0 auto;
+        width:800px;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+        color: #666;
+    }
+    .show-search h2{
+        margin:80px 0 20px 0;
+    }
+    .show-search th,.show-search td{
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+    }
+    .show-search th{
+        background-color: #f0f0f0;
+    }
 
-#header{
-	margin:0 auto;
-    height:60px;
-}
-#ull{
-	float:right;
-    /*position:absolute;*/
-}
-#ull a{
-	display:inline-block;
-	margin:10px 15px 0 0;
-	padding:0 15px;
-	width:50px;
-	height:30px;
-	border:1px solid #1C96FF;
-	line-height:30px;
-	text-align:center;
-	background-color:#1CACFF;
-	color:white;
-	border-radius:5px;
-	cursor:pointer;
-}
-
-
-
-.logobox{
-	clear:both;
-	margin:10x auto;
-}
-.logobox label{
-	font-weight:bold;
-	font-size:18px;
-	margin-left:10px;    	
-}
-.shu{
-	width:300px;
-	padding:7px;
-		border-radius:2px;
-		margin-left:10px;
-		border:1px solid black;
-		color:#A8A8A8;
-}
-.suo{
-	width:60px;
-	height:32px;
-	padding:5px;
-	margin-left:15px;
-	border-radius:2px;
-	border:1px solid black;
-	cursor:pointer;
-}
-
-
-
-#box1{
-	display:none;
-	z-index:1001;
-	position:absolute;
-	width:400px;
-	height:350px;
-	background-color:white;
-}
-#box2{
-    display:none;
-    z-index:1001;
-    position:absolute;
-    width:400px;
-    height:350px;
-    background-color:white;
-}
-
-.dlbox span{
-	display:block;
-	padding:12px 0 12px 22px;
-	font-family:"微软雅黑";
-	font-size:18px;
-	color: white;
-	background-color: #4490f7;
-	cursor: move;
-}
-.myclose{
-	width:30px;
-	height:30px;
-	position:absolute;
-	right:20px;
-	top:10px;
-	cursor: pointer;
-}
-.myclose:before, 
-.myclose:after {
-    content:'';
-    position: absolute;
-    right:2px;
-    top:12px;
-    width: 22px;
-    height: 2px;
-    background: white;
-    /*-webkit-transform: rotate(45deg);*/
-    transition: all 0.5s;
-}
-.myclose:before{
-    -webkit-transform: rotate(45deg);
-}  
-.myclose:after{
-    -webkit-transform: rotate(-45deg);
-} 
-.myclose:hover:before{
-    -webkit-transform: rotate(135deg);
-    background: #f00;
-}
-.myclose:hover:after{
-    -webkit-transform: rotate(45deg);
-    background: #f00;
-}
-
-.dlbox form{
-	padding:30px 20px 0 20px;
-}
-
-
-.dlbox form input[type^="te"]{
-	display:block;
-	width:350px;
-	/*height:40px;*/
-	border: 1px solid #ddd;
-	padding:12px;
-	font-size: 14px;
-    color: #666;
-    margin-bottom:15px;
-}
-.dlbox form input[type^="pa"]{
-	display:block;
-	width:350px;
-	border: 1px solid #ddd;
-	padding:12px;
-	font-size: 14px;
-    color: #666;
-    margin-bottom:15px;		
-}
-.dlbox form input[type^="su"]{
-	display:block;
-	background-color: #4490f7;
-	border: 1px solid #4490f7;
-	border-radius:2px;
-	font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #fff;
-	height: 48px;
-	width:350px;
-	margin-top:30px;
-}
-
-
-
+/*遮盖层*/
 #mask{
     background:#000;
     opacity:0.5;
@@ -171,5 +250,13 @@ body{
     position:absolute;
     left:0;
     top:0;
-    z-index:1000;
-}	
+    z-index:100;
+}
+#omask{
+    /*background-color:lightblue;*/
+    background:rgba(32,85,127,1);
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:100;
+}
